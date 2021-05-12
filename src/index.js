@@ -1,4 +1,4 @@
-import core from "@actions/core";
+import * as core from "@actions/core";
 import versionAssembler from "./versionassembler.js"
 import pkgjson from "./pkgjson.js";
 

@@ -21055,7 +21055,6 @@ __nccwpck_require__.r(__webpack_exports__);
 
 // EXTERNAL MODULE: ./node_modules/@actions/core/lib/core.js
 var core = __nccwpck_require__(2186);
-var core_default = /*#__PURE__*/__nccwpck_require__.n(core);
 // EXTERNAL MODULE: ./node_modules/date-fns/index.js
 var date_fns = __nccwpck_require__(3314);
 // EXTERNAL MODULE: external "fs"
@@ -21129,14 +21128,14 @@ function versionAssembler(schema, V, increasePatch) {
 
 
 (function run() {
-  const V = core_default().getInput("V");
-  const schema = core_default().getInput("schema");
-  const increasePatch = core_default().getInput("increase-patch").toLowerCase() === 'true';
+  const V = core.getInput("V");
+  const schema = core.getInput("schema");
+  const increasePatch = core.getInput("increase-patch").toLowerCase() === 'true';
 
   const versionString = versionAssembler(schema, V, increasePatch);
   return pkgjson.setVersion(versionString)
     .catch((error) => {
-      core_default().setFailed(error);
+      core.setFailed(error);
     });
 })()
 

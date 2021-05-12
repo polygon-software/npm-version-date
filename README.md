@@ -2,6 +2,8 @@
 
 Github action that sets the NPM package version based on a date schema.
 
+[![run npm-version pipeline](https://github.com/polygon-software/npm-version-date/actions/workflows/main.yml/badge.svg)](https://github.com/polygon-software/npm-version-date/actions/workflows/main.yml)
+
 Examples:
 
 | Schema        | Output        | Description  |

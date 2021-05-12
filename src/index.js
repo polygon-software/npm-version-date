@@ -9,6 +9,9 @@ import pkgjson from "./pkgjson.js";
 
   const versionString = versionAssembler(schema, V, increasePatch);
   return pkgjson.setVersion(versionString)
+    .then((version) => {
+      console.log(`New verion set: ${version}. Don't forget to commit this change.`)
+    })
     .catch((error) => {
       core.setFailed(error);
     });

@@ -1,5 +1,7 @@
 name: run npm-version pipeline
-on: push
+on:
+  push:
+    branches: [master, main]
 jobs:
   build:
 

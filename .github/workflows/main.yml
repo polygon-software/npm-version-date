@@ -15,8 +15,12 @@ jobs:
         with:
           node-version: 12.x
 
-      - name: Increment version number
-        run: npm --no-git-tag-version version patch
+      - name: Set version number
+        uses: polygon-software/npm-version-date@master
+        with:
+          schema: "V.yyMM.P"
+          V: 1
+          increase-patch: true
 
       - name: Setup environment
         run: npm ci

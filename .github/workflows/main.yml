@@ -25,6 +25,9 @@ jobs:
       - name: Setup environment
         run: npm ci
 
+      - name: Tests
+        run: npm run test
+
       - name: Build Node Module
         run: npm run build
 

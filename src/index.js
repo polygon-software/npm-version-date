@@ -8,7 +8,10 @@ async function run() {
   const increasePatch = action.getInput("increase-patch").toLowerCase() === 'true';
 
   const versionString = versionAssembler(schema, V, increasePatch);
-  return pkgjson.setVersion(versionString);
+  pkgjson.setVersion(versionString)
+    .catch((error) => {
+      action.setFailed(error);
+    });
 }
 
 run();

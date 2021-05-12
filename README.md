@@ -460,3 +460,5 @@ The Formation options follow the [date-fns format](https://date-fns.org/v2.21.3/
       </tr>
    </tbody>
 </table>
+
+[This project was developed in Zurich, switzerland by PolygonSoftware](https://polygon-software.ch/)

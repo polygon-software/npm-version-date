@@ -1,0 +1,37 @@
+name: run npm-version pipeline
+on: push
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js 12.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+
+      - name: Increment version number
+        run: npm --no-git-tag-version version patch
+
+      - name: Setup environment
+        run: npm ci
+
+      - name: Build Node Module
+        run: npm run build
+
+      - name: Commit new dist folder
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: New Build for production environmet
+          commit_options: '--no-verify --signoff'
+          file_pattern: .
+          commit_user_name: Bot (Autocommit Actions)
+          commit_user_email: actions@github.com
+          commit_author: Github Action <actions@github.com>
+          push_options: '--force'
+

@@ -1,0 +1,22 @@
+name: "NPM-Version-Date"
+author: "PolygonSoftware"
+description: "Set the NPM package version based on a date schema: YYYY.MM.P -> Year.Month.Patch -> 2021.05.1"
+branding:
+  icon: 'hash'
+  color: 'orange'
+inputs:
+  schema:
+    description: "Date schema based on [date-fns format](https://date-fns.org/v2.21.3/docs/format)"
+    required: true
+  V:
+    description: "Major version number. Must only be provided if 'V' is used within the schema."
+    default: "1"
+    required: false
+  increase-patch:
+    description: "If set to true, the patch version from the current package-json will be increased"
+    default: "false"
+    required: false
+
+runs:
+  using: "node12"
+  main: "dist/index.js"

@@ -11,6 +11,7 @@ import pkgjson from "./pkgjson.js";
   return pkgjson.setVersion(versionString)
     .then((version) => {
       console.log(`New verion set: ${version}. Don't forget to commit this change.`)
+      core.setOutput("version", version);
     })
     .catch((error) => {
       core.setFailed(error);

@@ -23,6 +23,8 @@ Each part of the version string (seperated by a dot) can be one of the following
 - yyyy.MM.VP -> V-and-P can not occur in the same part and must be separated by dots. Valid: yyyy.MM.V.P
 - yyyy.MM.V.ddP -> dd-and-P can not occur in the same part and must be separated by dots. Valid: yyyy.MM.V.dd.P
 
+**NPM Limitations:** A NPM version number should only exist of three parts: a.b.c. 
+
 ## How to use the NPM-Version-Date GitHub action
 
 An example of workflow
@@ -38,9 +40,9 @@ jobs:
         uses: actions/checkout@master
         
       - name: 'change version'
-        uses: polygon-software/npm-version-date@mater
+        uses: polygon-software/npm-version-date@master
         with:
-          schema: 'V.yyyy.MM.P'
+          schema: 'V.yyMM.P'
           V: '2'
           git-tag-version: 'false'
 ```

@@ -44,7 +44,7 @@ jobs:
         with:
           schema: 'V.yyMM.P'
           V: '2'
-          git-tag-version: 'false'
+          increase-patch: true
 ```
 
 ### Variables

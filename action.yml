@@ -16,7 +16,9 @@ inputs:
     description: "If set to true, the patch version from the current package-json will be increased"
     default: "false"
     required: false
-
+outputs:
+  version:
+    description: "The Version number that was set to package.json in the form vX.X.X"
 runs:
   using: "node12"
   main: "dist/index.js"
